@@ -1,0 +1,70 @@
+1536x864 screen: Height=835
+1536x864 screen: Width=762
+1536x864 screen: XPosition=771
+1536x864 screen: YPosition=3
+2 screens: Height=842
+2 screens: Width=1536
+2 screens: XPosition=0
+2 screens: YPosition=0
+HDMI-0 eDP-1-1=eDP-1-1
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAD8AAADHvwCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAGQAZQBiAGEAcgAAAAAlAAADHgAAAPYA///+AAAC+gAAAuIAAAAEAAAABAAAAAgAAAAI/AAAAAMAAAABAAAAAQAAACwAcQB1AGkAYwBrAEEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgIAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+eDP-1=eDP-1
+
+[Desktop Entry]
+FullScreen=false
+shouldShowMenuBarComingFromFullScreen=false
+shouldShowToolBarComingFromFullScreen=false
+
+[General]
+LockSidebar=true
+ShowSidebar=false
+
+[MainWindow]
+1536x864 screen: Height=835
+1536x864 screen: Width=506
+1536x864 screen: XPosition=515
+1536x864 screen: YPosition=3
+2 screens: Height=1515
+2 screens: Width=939
+2 screens: XPosition=10
+2 screens: YPosition=10
+HDMI-0 eDP-1-1=HDMI-0
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAQAAAAAAAABZAAADHvwCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAGQAZQBiAGEAcgEAAAAlAAADHgAAAPYA///+AAABmwAAAx4AAAAEAAAABAAAAAgAAAAI/AAAAAMAAAABAAAAAQAAACwAcQB1AGkAYwBrAEEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgIAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+eDP-1=eDP-1
+eDP-1-1=eDP-1-1
+
+[MainWindow][Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[Recent Files]
+File1[$e]=/mnt/Sec/Career/Books/Linux/outpdf.pdf
+File10[$e]=$HOME/Sec/Books/tafseerIbnKatheer/tkather14.pdf
+File2[$e]=/mnt/Sec/Career/Books/Linux/The Linux Command Line.pdf
+File3[$e]=/mnt/Sec/Career/Drivers/AVR-ATMEGA32/output.pdf
+File4[$e]=$HOME/Sec/Career/Drivers/AVR-ATMEGA32/ATmega32Fulldatasheet.pdf
+File5[$e]=$HOME/Sec/Career/Books/Linux/The Linux Command Line.pdf
+File6[$e]=$HOME/Sec/Career/Books/Linux/LinuxCommandLine.pdf
+File7[$e]=$HOME/Desktop/MariamAwadAllaCV.pdf
+File8[$e]=/mnt/Sec/Career/Courses/rtos/RTOS_Presentation.pdf
+File9[$e]=$HOME/Sec/Books/tafseerIbnKatheer/tkather13.pdf
+Name1[$e]=outpdf.pdf
+Name10[$e]=tkather14.pdf
+Name2[$e]=The Linux Command Line.pdf
+Name3[$e]=output.pdf
+Name4[$e]=ATmega32Fulldatasheet.pdf
+Name5[$e]=The Linux Command Line.pdf
+Name6[$e]=LinuxCommandLine.pdf
+Name7[$e]=MariamAwadAllaCV.pdf
+Name8[$e]=RTOS_Presentation.pdf
+Name9[$e]=tkather13.pdf
+
+[Shortcut Schemes]
+Current Scheme=Default
+
+[Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[UiSettings]
+ColorScheme=KvAdaptaDark
