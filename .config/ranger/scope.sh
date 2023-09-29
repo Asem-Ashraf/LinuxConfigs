@@ -74,6 +74,9 @@ case "$extension" in
     rar)
         # avoid password prompt by providing empty password
         try unrar -p- lt "$path" && { dump | trim; exit 0; } || exit 1;;
+    zip)
+        # avoid password prompt by providing empty password
+        try unzip -lP "" "$path" && { dump | trim; exit 0; } || exit 1;;
     7z)
         # avoid password prompt by providing empty password
         try 7z -p l "$path" && { dump | trim; exit 0; } || exit 1;;

@@ -44,10 +44,9 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 -- than 80 characters it just goes to the next line
 function my_keybind()
     local count = vim.v.count1
-    local initial_line = vim.fn.getline('.')
     for i = 1, count do
-        local line = vim.fn.getline('.')
-        local line_length = #line
+        local line_length = #vim.fn.getline('.')
+        -- Check if the current line is the last line in the file
         -- future feature: make this 80 a variable that can be set by the user
         -- either through a global variable or a vim command variable
         if line_length > 80 then
@@ -82,8 +81,8 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+-- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+-- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })

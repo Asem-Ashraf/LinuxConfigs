@@ -405,13 +405,21 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
 
-# Open specific applications in floating mode
+# Open specific applications in floating mode or change borders by window name
+# The window name of some terminal emulators can be the name of the running 
+# program if the terminal was opened with a command,
+# e.g. xterm -geometry 20x9+1050+835 -e "cal & sleep 10" this will result in a 
+# window with the name "cal" which I have made floating and borderless.
+for_window [title="cal & sleep 10"] floating enable border none
+# notification windows
+for_window [title="xfce4-notifyd"] border none
+for_window [title="Artha"] border none floating enable
 for_window [title="alsamixer"] floating enable border none
 for_window [class="calamares"] fgrowloating enable border none
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="fpakman"] floating enable
-for_window [class="Galculator"] floating enable border none
+for_window [class="qalculate"] floating enable border none
 for_window [class="GParted"] floating enable border none
 for_window [title="i3_help"] floating enable sticky enable border none
 for_window [class="Lightdm-settings"] floating enable

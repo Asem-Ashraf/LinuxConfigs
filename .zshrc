@@ -17,16 +17,29 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-alias list='lsd -a'
-alias storage='df | grep -P "^File|/home|/$"'
-alias booff= 'echo "0" | sudo tee /sys/devices/system/cpu/cpufreq/boost'
-alias car='cd /home/asem/Sec/Career/;rg'
 alias cls='clear'
+alias list='lsd -a'
+
+
+alias storage='df | grep -P "^File|/home|/$"'
+alias booff= 'sudo echo "0" | sudo tee /sys/devices/system/cpu/cpufreq/boost'
+alias car='cd /home/asem/Sec/Career/;rg'
 alias rg='ranger'
+
 alias download='sudo pacman -S'
-alias update='sudo pacman -Syu'
-alias uninstall='sudo pacman -R'
-alias messenger='nohup ~/messenger-linux-x64/Messenger;'
+alias updatesys='sudo pacman -Syu'
+alias remove='sudo pacman -R'
+
+
+# directory nvim: open nvim in the directory of the file given as argument
+# usage: dnvim some/directory/file.txt
+# will open the "file.txt" in some/directory/file.txt in nvim
+# and the working directory of nvim will be the directory that contains the 
+# opened file. In this case "some/directory"
+# This is awesome because I can then see files in the directory with telescope 
+# and nvim-tree and the directory of toggleterm will be set to be the directory 
+# of the current file
+alias dnvim='nvim -c "cd %:p:h"'
 
 alias gits='git status'
 alias gita='git add'
