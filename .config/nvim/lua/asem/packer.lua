@@ -4,14 +4,14 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
-	
+
 	-- Telescope fuzzy finder plugin.
 	use {
 		"nvim-telescope/telescope.nvim", tag = '0.1.1',
 		-- or                            , branch = '0.1.x',
 		requires = { 'nvim-lua/plenary.nvim' }
 	}
-	use  'duane9/nvim-rg'
+	use 'duane9/nvim-rg'
 
 	-- Color Schemes
 	use({ 'rose-pine/neovim', as = 'rose-pine' })
@@ -36,6 +36,9 @@ return require('packer').startup(function(use)
 		run = function() vim.fn["mkdp#util#install"]() end
 	}
 
+	-- obsidian.md
+	use("epwalsh/obsidian.nvim")
+
 	-- Undotree
 	use('mbbill/undotree')
 
@@ -44,36 +47,36 @@ return require('packer').startup(function(use)
 		branch = 'v2.x',
 		requires = {
 			-- LSP Support
-			{'neovim/nvim-lspconfig'},             -- Required
-			{'williamboman/mason.nvim'},           -- Optional
-			{'williamboman/mason-lspconfig.nvim'}, -- Optional
+			{ 'neovim/nvim-lspconfig' },  -- Required
+			{ 'williamboman/mason.nvim' }, -- Optional
+			{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
 			-- autocompletion
-			{'L3MON4D3/LuaSnip',run = 'make install_jsregexp'},         -- Required
-			{'hrsh7th/nvim-cmp'},         -- Required
-			{'hrsh7th/cmp-nvim-lsp'},     -- Required
-			{'hrsh7th/cmp-buffer'},       -- Optional
-			{'hrsh7th/cmp-path'},         -- Optional
-			{'hrsh7th/cmp-nvim-lua'},     -- Optional
+			{ 'L3MON4D3/LuaSnip',                 run = 'make install_jsregexp' }, -- Required
+			{ 'hrsh7th/nvim-cmp' },                    -- Required
+			{ 'hrsh7th/cmp-nvim-lsp' },                -- Required
+			{ 'hrsh7th/cmp-buffer' },                  -- Optional
+			{ 'hrsh7th/cmp-path' },                    -- Optional
+			{ 'hrsh7th/cmp-nvim-lua' },                -- Optional
 
-			{'saadparwaiz1/cmp_luasnip'}, -- Optional
+			{ 'saadparwaiz1/cmp_luasnip' },            -- Optional
 
-			{'folke/neodev.nvim'},
-			{'j-hui/fidget.nvim'},
+			{ 'folke/neodev.nvim' },
+			{ 'j-hui/fidget.nvim' },
 		}
 	}
-
-	use { -- nvim-tree
-		'nvim-tree/nvim-tree.lua',
-		requires = {
-			'nvim-tree/nvim-web-devicons', -- optional, for file icons
-		},
-		tag = 'nightly' -- optional, updated every week. (see issue #1193)
-	}
+	-- nvim-tree
+	-- use {
+	-- 	'kyazdani42/nvim-tree.lua',
+	-- 	requires = {
+	-- 		'kyazdani42/nvim-web-devicons', -- optional, for file icons
+	-- 	},
+	-- 	tag = 'nightly'           -- optional, updated every week. (see issue #1193)
+	-- }
 
 	use 'windwp/nvim-autopairs'
-	
-	use {"kylechui/nvim-surround"}
+
+	use { "kylechui/nvim-surround" }
 
 	-- Git related plugins
 	use 'tpope/vim-fugitive'
@@ -87,9 +90,9 @@ return require('packer').startup(function(use)
 
 	use 'ThePrimeagen/vim-be-good'
 
-	use 'navarasu/onedark.nvim' -- Theme inspired by 4tom
-	use 'nvim-lualine/lualine.nvim' -- Fancier statusline
+	use 'navarasu/onedark.nvim'            -- Theme inspired by 4tom
+	use 'nvim-lualine/lualine.nvim'        -- Fancier statusline
 	use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
-	use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
-	use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
+	use 'numToStr/Comment.nvim'            -- "gc" to comment visual regions/lines
+	use 'tpope/vim-sleuth'                 -- Detect tabstop and shiftwidth automatically
 end)

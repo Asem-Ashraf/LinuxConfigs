@@ -1,2 +1,9 @@
-vim.keymap.set('n', '<leader>t', ':NvimTreeToggle<CR>',{silent = true})
-require("nvim-tree").setup()
+-- require("nvim-tree").setup({
+-- 	disable_netrw = true,
+-- 	hijack_netrw = true,
+-- 	update_cwd = true,
+-- 	hijack_directories = {
+-- 		enable = true,
+-- 	},
+-- })
+-- vim.keymap.set('n', '<leader>t', ':NvimTreeToggle<CR>',{silent = true})

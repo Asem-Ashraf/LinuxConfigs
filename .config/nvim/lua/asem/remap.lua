@@ -69,6 +69,7 @@ vim.api.nvim_set_keymap('n', '<leader>n', ':lua my_keybind()<CR>', {silent=true}
 
 
 
+vim.keymap.set('n', '<leader>t', ':NvimTreeToggle<CR>',{silent = true})
 
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 

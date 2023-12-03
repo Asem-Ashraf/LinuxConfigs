@@ -23,7 +23,7 @@ local lsp = require("lsp-zero").preset({
     manage_nvim_cmp = {
         -- When set to true it will create keybindings that emulate Neovim's 
         -- default completion.
-        set_basic_mappings = true, -- true false
+        set_basic_mappings = false, -- true false
 
         -- When set to true it will setup tab completion, scrolling through 
         -- documentation window, and navigation between snippets.
@@ -41,7 +41,6 @@ local lsp = require("lsp-zero").preset({
         documentation_window = true, -- true false
     },
 })
--- require('lspconfig').arduino_language_server.setup{}
 
 lsp.on_attach(function(client, bufnr)
     -- lsp.default_keymaps({buffer = bufnr})
@@ -71,24 +70,15 @@ lsp.set_preferences({
     }
 })
 
-lsp.ensure_installed({
-    'clangd',
-    'pyright',
-    'pyre',
-    'pylsp',
-    -- 'pylyzer',
-    'jdtls',
-})
-
-lsp.configure('lua_ls', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim','cmp_select_opts','on_attach'}
-            }
-        }
-    }
-})
+-- lsp.configure('lua_ls', {
+--     settings = {
+--         Lua = {
+--             diagnostics = {
+--                 globals = { 'vim','cmp_select_opts','on_attach'}
+--             }
+--         }
+--     }
+-- })
 
 lsp.setup()
 
@@ -155,19 +145,6 @@ cmp.setup({
     },
 })
 
-
--- lsp.setup_nvim_cmp({
---     mapping = cmp_mappings
--- })
-
-
-
-
-vim.diagnostic.config({
-    virtual_text = true
-})
-
-
 -- Fix Undefined global 'vim'
 local cmp_nvim_lsp = require "cmp_nvim_lsp"
 local lspconfig = require('lspconfig')
@@ -179,3 +156,4 @@ lspconfig.clangd.setup {
         "--offset-encoding=utf-16",
     },
 }
+lspconfig.pylsp.setup {}
