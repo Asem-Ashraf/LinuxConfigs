@@ -8,6 +8,8 @@ vim.opt.termguicolors = true
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+-- Something obsidianmd told me to do
+vim.opt_local.conceallevel = 2
 
 vim.opt.spell = true
 vim.opt.spelllang="en_us"

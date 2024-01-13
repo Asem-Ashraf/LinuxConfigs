@@ -1,38 +1,43 @@
-1536x864 screen: Height=625
-1536x864 screen: Width=1530
-1536x864 screen: XPosition=3
-1536x864 screen: YPosition=214
-2 screens: Height=842
+1536x864 screen: Height=835
+1536x864 screen: Width=762
+1536x864 screen: XPosition=771
+1536x864 screen: YPosition=3
+2 screens: Height=827
 2 screens: Width=1536
 2 screens: XPosition=0
-2 screens: YPosition=0
+2 screens: YPosition=782
 HDMI-0 eDP-1-1=eDP-1-1
-State=AAAA/wAAAAD9AAAAAQAAAAAAAAD8AAADO/wCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAGQAZQBiAGEAcgAAAAAlAAADOwAAAPYA///+AAAF+gAAAjUAAAAEAAAABAAAAAgAAAAI/AAAAAMAAAABAAAAAQAAACwAcQB1AGkAYwBrAEEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgIAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAJYAAADYPwCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAGQAZQBiAGEAcgAAAAAAAAADYAAAAPYA///+AAAC+gAAAwcAAAAEAAAABAAAAAgAAAAI/AAAAAMAAAABAAAAAQAAACwAcQB1AGkAYwBrAEEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgIAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAwAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 eDP-1=eDP-1
+eDP-1-1=eDP-1-1
 
 [Desktop Entry]
-FullScreen=false
-shouldShowMenuBarComingFromFullScreen=false
-shouldShowToolBarComingFromFullScreen=false
+FullScreen=true
+shouldShowMenuBarComingFromFullScreen=true
+shouldShowToolBarComingFromFullScreen=true
 
 [General]
 LockSidebar=true
 ShowSidebar=false
 
 [MainWindow]
-1536x864 screen: Height=835
-1536x864 screen: Width=762
+1536x864 screen: Height=842
+1536x864 screen: Width=1536
 1536x864 screen: XPosition=0
 1536x864 screen: YPosition=0
-2 screens: Height=1536
-2 screens: Width=960
-2 screens: XPosition=0
-2 screens: YPosition=0
-HDMI-0 eDP-1-1=HDMI-0
+2 screens: Height=835
+2 screens: Width=762
+2 screens: XPosition=771
+2 screens: YPosition=3
+3 screens: Height=864
+3 screens: Width=1536
+3 screens: XPosition=1200
+3 screens: YPosition=0
+DP-0 HDMI-0 eDP-1-1=eDP-1-1
+HDMI-0 eDP-1-1=eDP-1-1
 HDMI-1-0 eDP-1=eDP-1
 MenuBar=Disabled
-RestorePositionForNextInstance=false
-State=AAAA/wAAAAD9AAAAAQAAAAAAAAD8AAAF2/wCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAGQAZQBiAGEAcgAAAAAlAAAF2wAAAPYA///+AAADwAAABdsAAAAEAAAABAAAAAgAAAAI/AAAAAMAAAABAAAAAQAAACwAcQB1AGkAYwBrAEEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgIAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAQAAAAAAAABaAAADB/wCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAGQAZQBiAGEAcgAAAAA8AAADB/////8A///+AAAGAAAAA2AAAAAEAAAABAAAAAgAAAAI/AAAAAMAAAABAAAAAQAAACwAcQB1AGkAYwBrAEEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgIAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAAwAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 eDP-1=eDP-1
 eDP-1-1=eDP-1-1
@@ -41,26 +46,26 @@ eDP-1-1=eDP-1-1
 ToolButtonStyle=IconOnly
 
 [Recent Files]
-File1[$e]=$HOME/Sec/Career/nahow/الدروس النحوية .pdf
-File10[$e]=$HOME/Sec/Career/Learning/AdaptiveAutosarPlatooning/V2X.pdf
-File2[$e]=$HOME/Sec/Career/Learning/AdaptiveAutosarPlatooning/1-s2.0-S1877050921025540-main.pdf
-File3[$e]=$HOME/Sec/Career/Learning/AdaptiveAutosarPlatooning/sensors-23-07576.pdf
-File4[$e]=$HOME/Sec/Career/Learning/AdaptiveAutosarPlatooning/Control Architecture for Connected Vehicle Platoons: From sensor Data to Controller Design Using Vehicle-to-Everything Communication.pdf
-File5[$e]=$HOME/Sec/Career/Learning/AdaptiveAutosarPlatooning/Connected cruise control: modelling, delay effects, and nonlinear behaviour.pdf
-File6[$e]=$HOME/Sec/Career/Learning/AdaptiveAutosarPlatooning/GP2022 - Truck Platooning Book.pdf
-File7[$e]=$HOME/Sec/Career/Learning/AdaptiveAutosarPlatooning/Masters Thesis_ A Lateral Control Solution for Cooperative Vehicle Platooning Applications.pdf
-File8[$e]=$HOME/Sec/Career/Learning/AdaptiveAutosarPlatooning/proposal_truck_platooning.pdf
-File9[$e]=$HOME/Sec/Career/Learning/AdaptiveAutosarPlatooning/V2V_Collision_Avoidance (1).pdf
-Name1[$e]=الدروس النحوية .pdf
-Name10[$e]=V2X.pdf
-Name2[$e]=1-s2.0-S1877050921025540-main.pdf
-Name3[$e]=sensors-23-07576.pdf
-Name4[$e]=Control Architecture for Connected Vehicle Platoons: From sensor Data to Controller Design Using Vehicle-to-Everything Communication.pdf
-Name5[$e]=Connected cruise control: modelling, delay effects, and nonlinear behaviour.pdf
-Name6[$e]=GP2022 - Truck Platooning Book.pdf
-Name7[$e]=Masters Thesis_ A Lateral Control Solution for Cooperative Vehicle Platooning Applications.pdf
-Name8[$e]=proposal_truck_platooning.pdf
-Name9[$e]=V2V_Collision_Avoidance (1).pdf
+File1[$e]=$HOME/sec/Books/tafseerIbnKatheer/tkather14.pdf
+File10[$e]=$HOME/sec/Books/Gerrman/Hammer's GERMAN Grammar and Usage - 5th Ed ( PDFDrive ).pdf
+File2[$e]=$HOME/sec/Books/tafseerIbnKatheer/tkather13.pdf
+File3[$e]=$HOME/sec/Books/tafseerIbnKatheer/tkather12.pdf
+File4[$e]=$HOME/sec/Books/tafseerIbnKatheer/tkather11.pdf
+File5[$e]=$HOME/sec/Books/tafseerIbnKatheer/tkather10.pdf
+File6[$e]=$HOME/sec/Books/tafseerIbnKatheer/tkather15.pdf
+File7[$e]=$HOME/sec/Career/Faculty/4/4.1/Computer Architecture/2.pdf
+File8[$e]=$HOME/Downloads/عقد بيع البدروم.pdf
+File9[$e]=$HOME/Downloads/عقد بيع البدروم 1.pdf
+Name1[$e]=tkather14.pdf
+Name10[$e]=Hammer's GERMAN Grammar and Usage - 5th Ed ( PDFDrive ).pdf
+Name2[$e]=tkather13.pdf
+Name3[$e]=tkather12.pdf
+Name4[$e]=tkather11.pdf
+Name5[$e]=tkather10.pdf
+Name6[$e]=tkather15.pdf
+Name7[$e]=2.pdf
+Name8[$e]=عقد بيع البدروم.pdf
+Name9[$e]=عقد بيع البدروم 1.pdf
 
 [Shortcut Schemes]
 Current Scheme=Default

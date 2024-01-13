@@ -18,12 +18,13 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias cls='clear'
-alias list='lsd -a'
+alias ls='lsd -al'
+alias sudo='sudo '
 
 
 alias storage='df | grep -P "^File|/home|/$"'
 alias booff= 'sudo echo "0" | sudo tee /sys/devices/system/cpu/cpufreq/boost'
-alias car='cd /home/asem/Sec/Career/;rg'
+alias car='cd /home/asem/sec/Career/;rg'
 alias rg='ranger'
 
 alias download='sudo pacman -S'
@@ -59,7 +60,8 @@ bindkey -v
 export KEYTIMEOUT=1.
 export EDITOR='nvim -p'
 export VISUAL='nvim -p'
-PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
+# PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
+# PATH=/home/asem/sioyek_code/build:$PATH
 export PATH
 INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info:$INFOPATH
 export INFOPATH

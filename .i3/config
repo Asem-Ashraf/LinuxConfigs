@@ -19,18 +19,20 @@ exec --no-startup-id pa-applet
 
 # Autostart applications
 exec_always --no-startup-id nitrogen --restore
-exec --no-startup-id manjaro-hello
+# exec --no-startup-id manjaro-hello
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id cmst
 exec --no-startup-id flameshot
 exec --no-startup-id clipit
+exec --no-startup-id muezzin
+exec --no-startup-id artha 
 # exec --no-startup-id picom --config ~/.config/picom.conf -b
 exec --no-startup-id libinput-gestures-setup start
-exec --no-startup-id redshift
+# exec --no-startup-id redshift
 # exec --no-startup-id imwheel
-exec --no-startup-id sbxkb
-exec --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
+# exec --no-startup-id sbxkb
+# exec --no-startup-id ff-theme-util
+# exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id "pkill polybar;polybar -r;"
 # exec_always --no-startup-id "xborders -c ~/.config/xborder/config.json"
 
@@ -38,11 +40,11 @@ exec_always --no-startup-id "pkill polybar;polybar -r;"
 exec_always --no-startup-id bash ~/.config/set-multilingual-keyboard.sh
 
 #mount drive 
-exec --no-startup-id sudo mount /dev/sda2 secHDD
+# exec --no-startup-id sudo mount /dev/sda2 secHDD
 
 # change borders
 bindsym $mod+u border none
-bindsym $mod+y border pixel 1
+bindsym $mod+y border pixel 3
 bindsym $mod+n border normal
 for_window [class="^.*"] border pixel 3
 set $thick 16
@@ -114,8 +116,8 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
-bindsym $mod+o split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
+bindsym $mod+o split h;exec notify-send 'tile horizontally' -t 2000
+bindsym $mod+v split v;exec notify-send 'tile vertically' -t 2000
 bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
@@ -209,7 +211,7 @@ gaps outer 0
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
- smart_borders on
+# smart_borders 
 
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
@@ -269,7 +271,7 @@ mode "$mode_gaps_outer" {
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #5FFf64 #80FFF9 #FDF6E3
+  client.focused          #556064 #FF708E #80FFF9 #FDF6E3
   client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
   client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2

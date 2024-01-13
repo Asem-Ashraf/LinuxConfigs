@@ -7,7 +7,7 @@ return require('packer').startup(function(use)
 
 	-- Telescope fuzzy finder plugin.
 	use {
-		"nvim-telescope/telescope.nvim", tag = '0.1.1',
+		"nvim-telescope/telescope.nvim",
 		-- or                            , branch = '0.1.x',
 		requires = { 'nvim-lua/plenary.nvim' }
 	}
@@ -48,8 +48,8 @@ return require('packer').startup(function(use)
 		requires = {
 			-- LSP Support
 			{ 'neovim/nvim-lspconfig' },  -- Required
-			{ 'williamboman/mason.nvim' }, -- Optional
-			{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
+			-- { 'williamboman/mason.nvim' }, -- Optional
+			-- { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
 			-- autocompletion
 			{ 'L3MON4D3/LuaSnip',                 run = 'make install_jsregexp' }, -- Required
@@ -66,13 +66,13 @@ return require('packer').startup(function(use)
 		}
 	}
 	-- nvim-tree
-	-- use {
-	-- 	'kyazdani42/nvim-tree.lua',
-	-- 	requires = {
-	-- 		'kyazdani42/nvim-web-devicons', -- optional, for file icons
-	-- 	},
-	-- 	tag = 'nightly'           -- optional, updated every week. (see issue #1193)
-	-- }
+	use {
+		'kyazdani42/nvim-tree.lua',
+		requires = {
+			'kyazdani42/nvim-web-devicons', -- optional, for file icons
+		},
+		tag = 'nightly'           -- optional, updated every week. (see issue #1193)
+	}
 
 	use 'windwp/nvim-autopairs'
 
@@ -86,6 +86,8 @@ return require('packer').startup(function(use)
 
 	use 'github/copilot.vim'
 	use "akinsho/toggleterm.nvim"
+
+	use 'Eandrju/cellular-automaton.nvim'
 
 
 	use 'ThePrimeagen/vim-be-good'

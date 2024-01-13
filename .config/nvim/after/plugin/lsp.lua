@@ -146,11 +146,13 @@ cmp.setup({
 })
 local cmp_nvim_lsp = require "cmp_nvim_lsp"
 
+
+
 -- Set up lspconfig and language servers.
 -- Need to understand how to download each language server and manually install it.
 -- Then add it to the lspconfig in here.
---
--- Fix Undefined global 'vim'
 local lspconfig = require('lspconfig')
+
+-- Fix Undefined global 'vim'
 lspconfig.clangd.setup { on_attach = on_attach, capabilities = cmp_nvim_lsp.default_capabilities(), cmd = { "clangd", "--offset-encoding=utf-16", }, }
 lspconfig.pylsp.setup {}
