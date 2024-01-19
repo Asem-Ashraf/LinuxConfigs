@@ -47,5 +47,6 @@ vim.o.mouse = 'a'
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
-
-
+-- Show newline characters
+vim.o.list = true
+vim.o.listchars = "eol:⏎,tab:»·,trail:·,nbsp:·,extends:→,precedes:←"

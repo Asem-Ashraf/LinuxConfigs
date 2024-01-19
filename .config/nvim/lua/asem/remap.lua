@@ -39,8 +39,8 @@ vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- third greatest remap ever: asem
--- cuts the current line if it is more than 80 characters without cutting in the 
--- middle of a word and puts its remaining on the next line if the line is less 
+-- cuts the current line if it is more than 80 characters without cutting in the
+-- middle of a word and puts its remaining on the next line if the line is less
 -- than 80 characters it just goes to the next line
 function my_keybind()
     local count = vim.v.count1
@@ -52,15 +52,15 @@ function my_keybind()
         -- future feature: make this 80 a variable that can be set by the user
         -- either through a global variable or a vim command variable
         if line_length > 80 then
-            -- The x in the last string is mandatory so that the commands in 
-            -- the first string is executed immediately rather than be saved in 
-            -- a typeahead buffer. If they were saved in a typeahead buffer then 
-            -- when getting the line size it would be the same size before any 
-            -- modification which is not the desired behavior because the size 
-            -- of the current line should change after these commands are 
-            -- executed, and the next iteration of the loop must operate on the 
+            -- The x in the last string is mandatory so that the commands in the
+            -- first string is executed immediately rather than be saved in a
+            -- typeahead buffer. If they were saved in a typeahead buffer then
+            -- when getting the line size it would be the same size before any
+            -- modification which is not the desired behavior because the size
+            -- of the current line should change after these commands are
+            -- executed, and the next iteration of the loop must operate on the
             -- new size for this function to execute as desired.
-            vim.cmd([[call feedkeys("83|Bi".nr2char(10).nr2char(27)."0","nx")]])
+            vim.cmd([[call feedkeys("83|Bi".nr2char(8).nr2char(10).nr2char(27)."0","nx")]])
         else
             vim.cmd([[call feedkeys("j0","nx")]])
         end
@@ -76,8 +76,7 @@ end
 -- command line while keeping the number in the v.count variable.
 -- this was in a note in :help count1
 -- always read the manual
-vim.api.nvim_set_keymap('n', '<leader>n', ':<C-U>lua my_keybind()<CR>', 
-    {silent=true})
+vim.api.nvim_set_keymap('n', '<leader>n', ':<C-U>lua my_keybind()<CR>', {silent=true})
 
 
 

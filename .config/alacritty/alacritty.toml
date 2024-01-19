@@ -1,0 +1,21 @@
+[env]
+TERM = "alacritty"
+
+[font]
+size = 13.0
+
+[font.normal]
+family = "MesloLGS NF"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Shift|Super"
+
+[window]
+opacity = 0.0
+
+[window.dimensions]
+columns = 60
+lines = 20
