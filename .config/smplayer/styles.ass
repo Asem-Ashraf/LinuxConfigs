@@ -4,4 +4,4 @@ Collisions: Normal
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, BackColour, OutlineColour, Bold, Italic, Alignment, BorderStyle, Outline, Shadow, MarginL, MarginR, MarginV
-Style: Default,Noto Naskh Arabic SemiBold,32,&H00ffffff,&H00000000,&H00000000,-1,0,2,1,0.3,1,20,20,0
+Style: Default,Noto Sans Gurmukhi,10,&H00ffffff,&H00000000,&H00000000,0,0,2,1,0.3,0,20,20,0

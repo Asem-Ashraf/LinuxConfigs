@@ -18,8 +18,11 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias cls='clear'
-alias ls='lsd -al'
-alias sudo='sudo '
+alias ba='cd ..;'
+alias l.='lsd -al'
+alias bthscn='bluetooth on;sleep 1;bluetoothctl power on;bluetoothctl connect 40:72:18:B6:5B:85'
+alias tggboost="cat /sys/devices/system/cpu/cpufreq/boost| awk '{printf !\$a}'| sudo tee /sys/devices/system/cpu/cpufreq/boost"
+alias batgg="awk '{printf !\$a;}' /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode> /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
 
 
 alias storage='df | grep -P "^File|/home|/$"'
@@ -28,7 +31,7 @@ alias car='cd /home/asem/sec/Career/;rg'
 alias rg='ranger'
 
 alias download='sudo pacman -S'
-alias updatesys='sudo pacman -Syu'
+alias usys='sudo pacman -Syu'
 alias remove='sudo pacman -R'
 
 
@@ -43,6 +46,8 @@ alias remove='sudo pacman -R'
 alias dnvim='nvim -c "cd %:p:h"'
 
 alias gits='git status'
+alias gitd='git diff'
+alias gitsn='git status -uno'
 alias gita='git add'
 alias gitp='git push'
 alias gitc='git commit -m'
@@ -60,10 +65,10 @@ bindkey -v
 export KEYTIMEOUT=1.
 export EDITOR='nvim -p'
 export VISUAL='nvim -p'
-# PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
-# PATH=/home/asem/sioyek_code/build:$PATH
+export MANPAGER='nvim +Man!'
+PATH=$PATH:/home/asem/Downloads/lua-language-server/bin
+# PATH=$PATH:/usr/local/texlive/2024/bin/x86_64-linux
+export TEXMFHOME=~/texmf
+export PATH=/usr/local/texlive/2024/bin/$(uname -m)-$(uname -s | tr 'A-Z' 'a-z'):$PATH
 export PATH
-INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info:$INFOPATH
-export INFOPATH
-MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man:$MANPATH
-export MANPATH
+export QT_QPA_PLATFORMTHEME=qt5ct

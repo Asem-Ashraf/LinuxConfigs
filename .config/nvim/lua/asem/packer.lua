@@ -9,13 +9,17 @@ return require('packer').startup(function(use)
 	use {
 		"nvim-telescope/telescope.nvim",
 		-- or                            , branch = '0.1.x',
-		requires = { 'nvim-lua/plenary.nvim' }
+		requires = { 
+			'nvim-lua/plenary.nvim',
+			'duane9/nvim-rg',
+			'sharkdp/fd'
+		}
 	}
-	use 'duane9/nvim-rg'
 
 	-- Color Schemes
-	use({ 'rose-pine/neovim', as = 'rose-pine' })
 	use({ "cpea2506/one_monokai.nvim" })
+	use({ 'rose-pine/neovim', as = 'rose-pine' })
+	use { "catppuccin/nvim", as = "catppuccin" }
 
 	-- Treesitter
 	use {
@@ -84,7 +88,11 @@ return require('packer').startup(function(use)
 	use 'lewis6991/gitsigns.nvim'
 
 
-	use 'github/copilot.vim'
+	use {
+		'github/copilot.vim',
+		branch = 'main',
+	}
+
 	use "akinsho/toggleterm.nvim"
 
 	use 'Eandrju/cellular-automaton.nvim'

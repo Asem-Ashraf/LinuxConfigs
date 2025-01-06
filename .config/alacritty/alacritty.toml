@@ -1,3 +1,6 @@
+general.import = [
+    "~/.config/alacritty/themed/themes/dark_pride.toml"
+]
 [env]
 TERM = "alacritty"
 
@@ -15,6 +18,7 @@ mods = "Shift|Super"
 
 [window]
 opacity = 0.0
+decorations_theme_variant = "Dark"
 
 [window.dimensions]
 columns = 60

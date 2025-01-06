@@ -15,7 +15,7 @@ local lsp = require("lsp-zero").preset({
     set_lsp_keymaps = {
         -- When set to true lsp-zero will not override any shortcut that is 
         -- already "taken".
-        preserve_mappings = false, -- true false
+        preserve_mappings = true, -- true false
         -- List of shorcuts you don't want lsp-zero to override.
         omit = {}, -- List of strings
     },
@@ -23,7 +23,7 @@ local lsp = require("lsp-zero").preset({
     manage_nvim_cmp = {
         -- When set to true it will create keybindings that emulate Neovim's 
         -- default completion.
-        set_basic_mappings = false, -- true false
+        set_basic_mappings = true, -- true false
 
         -- When set to true it will setup tab completion, scrolling through 
         -- documentation window, and navigation between snippets.
@@ -116,10 +116,11 @@ cmp.setup({
         end),
     },
     sources = {
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' }, -- For luasnip users.
-        { name = 'buffer' },
-        { name = 'path' }
+        { name = 'copilot', group_index = 2},
+        { name = 'nvim_lsp', group_index = 1},
+        { name = 'luasnip', group_index = 1 }, -- For luasnip users.
+        { name = 'buffer', group_index = 1 },
+        { name = 'path', group_index = 1 }
     },
     window = {
         completion = cmp.config.window.bordered("rounded"),
@@ -144,7 +145,28 @@ cmp.setup({
         end,
     },
 })
+-- cmp.setup.cmdline(
+--     ':',
+--     {
+--         mapping = cmp.mapping.preset.cmdline(),
+--         sources = cmp.config.sources(
+--             {
+--                 {name = 'path'}
+--             },
+--             {
+--                 {name = 'cmdline'}
+--             }
+--         ),
+--         matching =  {disallow_symbol_nonprefix_matching = false }
+--     }
+-- )
 local cmp_nvim_lsp = require "cmp_nvim_lsp"
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on(
+    'confirm_done',
+    cmp_autopairs.on_confirm_done()
+)
+local capabilities = cmp_nvim_lsp.default_capabilities()
 
 
 
@@ -154,5 +176,40 @@ local cmp_nvim_lsp = require "cmp_nvim_lsp"
 local lspconfig = require('lspconfig')
 
 -- Fix Undefined global 'vim'
-lspconfig.clangd.setup { on_attach = on_attach, capabilities = cmp_nvim_lsp.default_capabilities(), cmd = { "clangd", "--offset-encoding=utf-16", }, }
-lspconfig.pylsp.setup {}
+lspconfig.clangd.setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = {
+        "clangd",
+        "--offset-encoding=utf-16",
+    },
+}
+lspconfig.pylsp.setup{
+    capabilities = capabilities,
+}
+
+-- lua LSP
+lspconfig.lua_ls.setup {
+    capabilities = capabilities,
+}
+
+-- bash LSP
+-- lspconfig.bashls.setup {
+--     capabilities = capabilities,
+-- }
+
+-- cmake LSP
+lspconfig.cmake.setup {
+    capabilities = capabilities,
+}
+
+-- markdown LSPs
+lspconfig.marksman.setup {
+    capabilities = capabilities,
+}
+-- lspconfig.remark_ls.setup{}
+-- lspconfig.ltex.setup{}
+
+-- rust and markdown
+-- lspconfig.rust_analyzer.setup{}
+

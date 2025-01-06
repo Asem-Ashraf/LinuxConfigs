@@ -7,20 +7,12 @@ require("obsidian").setup(
 	workspaces = {
 		{
 			name = "Notes",
-			path = 	"~/sec/Career/Learning/Notes/obsidian"
+			path = 	"~/sec/Career/Notes/obsidian"
 		},
-		{
-			name = "armNotes",
-			path = 	"~/sec/Career/Drivers/ARM-STM32F103xx/MCAL/RCC/"
-		},
-		-- {
-		-- 	name = "armNotes",
-		-- 	path = 	"~/Sec/Career/Drivers/ARM-STM32F103xx/MCAL/RCC/"
-		-- },
 	},
 	-- Optional, set to true to use the current directory as a vault; otherwise
 	-- the first workspace is opened by default.
-	detect_cwd = true,
+	-- detect_cwd = true,
 
 	-- -- Optional, if you keep notes in a specific subdirectory of your vault.
 	-- notes_subdir = "notes",
@@ -40,6 +32,8 @@ require("obsidian").setup(
 	-- 	template = nil
 	-- },
 
+	new_notes_location = "current_dir",
+
 	-- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
 	completion = {
 		-- Set to false to disable completion.
@@ -51,22 +45,21 @@ require("obsidian").setup(
 		-- Where to put new notes created from completion. Valid options are
 		--  * "current_dir" - put new notes in same directory as the current buffer.
 		--  * "notes_subdir" - put new notes in the default notes subdirectory.
-		new_notes_location = "current_dir",
 
 		-- Control how wiki links are completed with these (mutually exclusive) options:
 		--
 		-- 1. Whether to add the note ID during completion.
 		-- E.g. "[[Foo" completes to "[[foo|Foo]]" assuming "foo" is the ID of the note.
 		-- Mutually exclusive with 'prepend_note_path' and 'use_path_only'.
-		prepend_note_id = true,
+		-- prepend_note_id = true,
 		-- 2. Whether to add the note path during completion.
 		-- E.g. "[[Foo" completes to "[[notes/foo|Foo]]" assuming "notes/foo.md" is the path of the note.
 		-- Mutually exclusive with 'prepend_note_id' and 'use_path_only'.
-		prepend_note_path = false,
+		-- prepend_note_path = false,
 		-- 3. Whether to only use paths during completion.
 		-- E.g. "[[Foo" completes to "[[notes/foo]]" assuming "notes/foo.md" is the path of the note.
 		-- Mutually exclusive with 'prepend_note_id' and 'prepend_note_path'.
-		use_path_only = false,
+		-- use_path_only = false,
 	},
 
 	-- Optional, configure key mappings. These are the defaults. If you don't want to set any keymappings this
@@ -134,12 +127,12 @@ require("obsidian").setup(
 	-- },
 
 	-- Optional, customize the backlinks interface.
-	backlinks = {
-		-- The default height of the backlinks pane.
-		height = 10,
-		-- Whether or not to wrap lines.
-		wrap = true,
-	},
+	-- backlinks = {
+	-- 	-- The default height of the backlinks pane.
+	-- 	height = 10,
+	-- 	-- Whether or not to wrap lines.
+	-- 	wrap = true,
+	-- },
 
 	-- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
 	-- URL it will be ignored but you can customize this behavior here.
@@ -206,7 +199,7 @@ require("obsidian").setup(
 		-- Replace the above with this if you don't have a patched font:
 		-- external_link_icon = { char = "", hl_group = "ObsidianExtLinkIcon" },
 		reference_text = { hl_group = "ObsidianRefText" },
-		highlight_text = { hl_group = "ObsidianHighlightText" },
+		-- highlight_text = { hl_group = "ObsidianHighlightText" },
 		tags = { hl_group = "ObsidianTag" },
 		hl_groups = {
 			-- The options are passed directly to `vim.api.nvim_set_hl()`. See `:help nvim_set_hl`.
@@ -218,7 +211,7 @@ require("obsidian").setup(
 			ObsidianRefText = { underline = true, fg = "#c792ea" },
 			ObsidianExtLinkIcon = { fg = "#c792ea" },
 			ObsidianTag = { italic = true, fg = "#89ddff" },
-			ObsidianHighlightText = { bg = "#75662e" },
+			-- ObsidianHighlightText = { bg = "#75662e" },
 		},
 	},
 

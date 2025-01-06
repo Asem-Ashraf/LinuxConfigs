@@ -1,9 +1,9 @@
 require("nvim-tree").setup({
-	disable_netrw = true,
-	hijack_netrw = true,
+	disable_netrw = false,
+	hijack_netrw = false,
 	update_cwd = true,
 	hijack_directories = {
-		enable = true,
+		enable = false,
 	},
 })
 -- Already in remap.lua

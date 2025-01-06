@@ -2,6 +2,8 @@
 set $mod Mod4
 set $alt Mod1
 set $terminal alacritty
+set $sleeptime 500
+set $filemanager alacritty -e ranger
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 3
@@ -14,30 +16,35 @@ hide_edge_borders none
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
-exec --no-startup-id start-pulseaudio-x11
+# exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id pa-applet
+# exec --no-startup-id nm-applet
 
 # Autostart applications
-exec_always --no-startup-id nitrogen --restore
+# exec_always --no-startup-id nitrogen --restore
 # exec --no-startup-id manjaro-hello
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id cmst
+exec --no-startup-id xset s on
+exec --no-startup-id xset +dpms
+exec --no-startup-id xset dpms 180 $sleeptime 501
+exec --no-startup-id xidlehook --not-when-audio --timer $sleeptime 'i3exit suspend' ''
 exec --no-startup-id flameshot
 exec --no-startup-id clipit
-exec --no-startup-id muezzin
-exec --no-startup-id artha 
-# exec --no-startup-id picom --config ~/.config/picom.conf -b
 exec --no-startup-id libinput-gestures-setup start
+exec --no-startup-id polybar -r
+
+# add the arabic language to the keyboard with win space to toggle between them.
+exec_always --no-startup-id bash ~/.config/set-multilingual-keyboard.sh
+
+exec --no-startup-id cmst
+# exec --no-startup-id muezzin
+# exec --no-startup-id artha 
+# exec --no-startup-id picom --config ~/.config/picom.conf -b
 # exec --no-startup-id redshift
 # exec --no-startup-id imwheel
 # exec --no-startup-id sbxkb
 # exec --no-startup-id ff-theme-util
 # exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id "pkill polybar;polybar -r;"
 # exec_always --no-startup-id "xborders -c ~/.config/xborder/config.json"
-
-# add the arabic language to the keyboard with win space to toggle between them.
-exec_always --no-startup-id bash ~/.config/set-multilingual-keyboard.sh
 
 #mount drive 
 # exec --no-startup-id sudo mount /dev/sda2 secHDD
@@ -46,6 +53,10 @@ exec_always --no-startup-id bash ~/.config/set-multilingual-keyboard.sh
 bindsym $mod+u border none
 bindsym $mod+y border pixel 3
 bindsym $mod+n border normal
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
 for_window [class="^.*"] border pixel 3
 set $thick 16
 
@@ -64,19 +75,13 @@ bindsym $mod+z exec --no-startup-id morc_menu
 bindsym $mod+Ctrl+b exec --no-startup-id $terminal -e 'bmenu' 
 
 bindsym $mod+F1 exec --no-startup-id brave -password-store=basic
-bindsym $mod+F3 exec --no-startup-id thunar
-bindsym $mod+F4 exec --no-startup-id discord 
-bindsym $mod+F6 exec --no-startup-id telegram-desktop
-bindsym $alt+z exec --no-startup-id pavucontrol
-
-# bindsym $mod+F3 exec ranger
-bindsym $mod+Shift+F3 exec --no-startup-id pcmanfm_pkexec 
-
+bindsym $mod+F2 exec --no-startup-id discord 
+bindsym $alt+p exec --no-startup-id pavucontrol
 
 # stop redshift
 bindsym $mod+m --release exec "pkill redshift"
 # start redshift
-bindsym $mod+Shift+m --release exec "redshift"
+bindsym $mod+Shift+m --release exec "pkill redshift;redshift"
 
 bindsym $mod+t exec --no-startup-id pkill picom 
 bindsym $mod+Ctrl+t exec --no-startup-id picom --config ~/.config/picom.conf -b
@@ -87,12 +92,13 @@ bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s 
 bindsym $mod+Shift+s --release exec --no-startup-id flameshot gui
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill # focus_follows_mouse no 
+
+
+
 bindsym $mod+h focus left 
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -103,8 +109,6 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -122,17 +126,10 @@ bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
-
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Ctrl+f focus mode_toggle
 
 # toggle sticky
 # bindsym $mod+Shift+s sticky toggle
@@ -152,7 +149,7 @@ bindsym $mod+Ctrl+l workspace next
 bindsym $mod+Ctrl+h workspace prev
 
 # switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
+for_window [urgent=latest] focus, fullscreen disable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -198,7 +195,7 @@ mode "$mode_system" {
 #############################
 
 # Set inner/outer gaps
-gaps inner 0
+gaps inner 5
 gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
@@ -207,11 +204,11 @@ gaps outer 0
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-# smart_gaps on
+smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-# smart_borders 
+smart_borders on
 
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
@@ -434,7 +431,7 @@ for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
 for_window [title="About Pale Moon"] floating enable
 for_window [class="Pamac-manager"] floating enable
-for_window [class="Pavucontrol"] floating enable
+# for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border none
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border none
 for_window [class="Simple-scan"] floating enable border none

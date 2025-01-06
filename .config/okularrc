@@ -12,7 +12,7 @@ eDP-1=eDP-1
 eDP-1-1=eDP-1-1
 
 [Desktop Entry]
-FullScreen=true
+FullScreen=false
 shouldShowMenuBarComingFromFullScreen=true
 shouldShowToolBarComingFromFullScreen=true
 
@@ -21,23 +21,22 @@ LockSidebar=true
 ShowSidebar=false
 
 [MainWindow]
-1536x864 screen: Height=842
-1536x864 screen: Width=1536
-1536x864 screen: XPosition=0
-1536x864 screen: YPosition=0
+1536x864 screen: Height=824
+1536x864 screen: Width=754
+1536x864 screen: XPosition=774
+1536x864 screen: YPosition=9
 2 screens: Height=835
 2 screens: Width=762
 2 screens: XPosition=771
 2 screens: YPosition=3
-3 screens: Height=864
-3 screens: Width=1536
-3 screens: XPosition=1200
-3 screens: YPosition=0
+3 screens: Height=406
+3 screens: Width=1518
+3 screens: XPosition=1209
+3 screens: YPosition=1506
+DP-0 DP-2 HDMI-0=HDMI-0
 DP-0 HDMI-0 eDP-1-1=eDP-1-1
 HDMI-0 eDP-1-1=eDP-1-1
 HDMI-1-0 eDP-1=eDP-1
-MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAQAAAAAAAABaAAADB/wCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAGQAZQBiAGEAcgAAAAA8AAADB/////8A///+AAAGAAAAA2AAAAAEAAAABAAAAAgAAAAI/AAAAAMAAAABAAAAAQAAACwAcQB1AGkAYwBrAEEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgIAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAAwAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 eDP-1=eDP-1
 eDP-1-1=eDP-1-1
@@ -46,26 +45,26 @@ eDP-1-1=eDP-1-1
 ToolButtonStyle=IconOnly
 
 [Recent Files]
-File1[$e]=$HOME/sec/Books/tafseerIbnKatheer/tkather14.pdf
-File10[$e]=$HOME/sec/Books/Gerrman/Hammer's GERMAN Grammar and Usage - 5th Ed ( PDFDrive ).pdf
-File2[$e]=$HOME/sec/Books/tafseerIbnKatheer/tkather13.pdf
-File3[$e]=$HOME/sec/Books/tafseerIbnKatheer/tkather12.pdf
-File4[$e]=$HOME/sec/Books/tafseerIbnKatheer/tkather11.pdf
-File5[$e]=$HOME/sec/Books/tafseerIbnKatheer/tkather10.pdf
-File6[$e]=$HOME/sec/Books/tafseerIbnKatheer/tkather15.pdf
-File7[$e]=$HOME/sec/Career/Faculty/4/4.1/Computer Architecture/2.pdf
-File8[$e]=$HOME/Downloads/عقد بيع البدروم.pdf
-File9[$e]=$HOME/Downloads/عقد بيع البدروم 1.pdf
-Name1[$e]=tkather14.pdf
-Name10[$e]=Hammer's GERMAN Grammar and Usage - 5th Ed ( PDFDrive ).pdf
-Name2[$e]=tkather13.pdf
-Name3[$e]=tkather12.pdf
-Name4[$e]=tkather11.pdf
-Name5[$e]=tkather10.pdf
-Name6[$e]=tkather15.pdf
-Name7[$e]=2.pdf
-Name8[$e]=عقد بيع البدروم.pdf
-Name9[$e]=عقد بيع البدروم 1.pdf
+File1[$e]=$HOME/sec/Career/GP/control/FinalMpcEquations.pdf
+File10[$e]=/mnt/Sec/Career/Faculty/4/4.2/ANN/study.pdf
+File2[$e]=/mnt/Sec/Career/Faculty/4/4.2/Embedded Systems 2/question bank computer contrl 2.pdf
+File3[$e]=/mnt/Sec/Career/resume-cv/resume.pdf
+File4[$e]=/mnt/Sec/onepage.pdf2222
+File5[$e]=/mnt/Sec/تـــــرجــــمــــــــة_ (1).pdf
+File6[$e]=/mnt/Sec/تـــــرجــــمــــــــة_ (1).pdf1
+File7[$e]=/mnt/Sec/تـــــرجــــمــــــــة_ (1)1.pdf1
+File8[$e]=$HOME/sec/totas.pdf
+File9[$e]=$HOME/sec/تـــــرجــــمــــــــة_ (1)1.pdf1.pdf
+Name1[$e]=FinalMpcEquations.pdf
+Name10[$e]=study.pdf
+Name2[$e]=question bank computer contrl 2.pdf
+Name3[$e]=resume.pdf
+Name4[$e]=onepage.pdf2222
+Name5[$e]=تـــــرجــــمــــــــة_ (1).pdf
+Name6[$e]=تـــــرجــــمــــــــة_ (1).pdf1
+Name7[$e]=تـــــرجــــمــــــــة_ (1)1.pdf1
+Name8[$e]=totas.pdf
+Name9[$e]=تـــــرجــــمــــــــة_ (1)1.pdf1.pdf
 
 [Shortcut Schemes]
 Current Scheme=Default
