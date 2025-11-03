@@ -1,2 +1,2 @@
 #! /bin/zsh
-setxkbmap -layout us,ara -option 'grp:win_space_toggle'
+setxkbmap us;setxkbmap  -layout us,ara -option 'grp:win_space_toggle'

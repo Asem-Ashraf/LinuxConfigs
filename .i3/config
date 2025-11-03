@@ -5,50 +5,14 @@ set $terminal alacritty
 set $sleeptime 500
 set $filemanager alacritty -e ranger
 
+
+
+# BORDERS
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 3
 default_floating_border none
-
 # Hide borders
 hide_edge_borders none
-
-################################################################################################
-## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
-################################################################################################
-
-# exec --no-startup-id start-pulseaudio-x11
-exec --no-startup-id pa-applet
-# exec --no-startup-id nm-applet
-
-# Autostart applications
-# exec_always --no-startup-id nitrogen --restore
-# exec --no-startup-id manjaro-hello
-exec --no-startup-id xset s on
-exec --no-startup-id xset +dpms
-exec --no-startup-id xset dpms 180 $sleeptime 501
-exec --no-startup-id xidlehook --not-when-audio --timer $sleeptime 'i3exit suspend' ''
-exec --no-startup-id flameshot
-exec --no-startup-id clipit
-exec --no-startup-id libinput-gestures-setup start
-exec --no-startup-id polybar -r
-
-# add the arabic language to the keyboard with win space to toggle between them.
-exec_always --no-startup-id bash ~/.config/set-multilingual-keyboard.sh
-
-exec --no-startup-id cmst
-# exec --no-startup-id muezzin
-# exec --no-startup-id artha 
-# exec --no-startup-id picom --config ~/.config/picom.conf -b
-# exec --no-startup-id redshift
-# exec --no-startup-id imwheel
-# exec --no-startup-id sbxkb
-# exec --no-startup-id ff-theme-util
-# exec_always --no-startup-id fix_xcursor
-# exec_always --no-startup-id "xborders -c ~/.config/xborder/config.json"
-
-#mount drive 
-# exec --no-startup-id sudo mount /dev/sda2 secHDD
-
 # change borders
 bindsym $mod+u border none
 bindsym $mod+y border pixel 3
@@ -60,22 +24,64 @@ bindsym $mod+e layout toggle split
 for_window [class="^.*"] border pixel 3
 set $thick 16
 
+# APPLETS
+# pulseaudio volume control applet
+exec --no-startup-id pa-applet
+# Network manager applet
+exec --no-startup-id nm-applet
+# Bluetooth manager applet
+exec --no-startup-id blueman-applet
+
+# Set wallpaper background
+# exec --no-startup-id feh --bg-scale ~/sec/Pictures/SpaceX/6.jpg
+
+
+# Autostart commands
+# exec_always --no-startup-id nitrogen --restore
+# exec --no-startup-id manjaro-hello
+exec --no-startup-id xset s on
+exec --no-startup-id xset +dpms
+exec --no-startup-id xset dpms 180 $sleeptime 501
+exec --no-startup-id xidlehook --not-when-audio --timer $sleeptime "i3exit suspend" ''
+exec --no-startup-id flameshot
+exec --no-startup-id clipit
+exec --no-startup-id libinput-gestures-setup start
+exec --no-startup-id polybar -r
+
+# exec --no-startup-id picom --config ~/.config/picom.conf -b
+# exec --no-startup-id redshift
+# exec --no-startup-id imwheel
+# exec --no-startup-id sbxkb
+# exec --no-startup-id ff-theme-util
+# exec_always --no-startup-id fix_xcursor
+
+# add the arabic language to the keyboard with win space to toggle between them.
+exec_always --no-startup-id bash ~/.config/set-multilingual-keyboard.sh
+
+
+
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 bindsym $mod+Return exec --no-startup-id $terminal
 
+
 # Lock screen
 bindsym $mod+9 exec --no-startup-id blurlock
-# kill focused window
-bindsym $mod+x kill
-# start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_recency
+# kill focused window (I have deliberately made this hard to press to avoid accidents and to manually close applications with their own quit option)
+bindsym $mod+Shift+x kill
+
+
+# Menus
+# dmenu
+bindsym $mod+d exec --no-startup-id zsh -ic "$(dmenu_path | dmenu_recency -i -l 10 -p 'Run:')"
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 bindsym $mod+Ctrl+b exec --no-startup-id $terminal -e 'bmenu' 
 
+# application shortcuts
 bindsym $mod+F1 exec --no-startup-id brave -password-store=basic
 bindsym $mod+F2 exec --no-startup-id discord 
+bindsym $mod+F3 exec --no-startup-id thunderbird
 bindsym $alt+p exec --no-startup-id pavucontrol
 
 # stop redshift
@@ -83,8 +89,11 @@ bindsym $mod+m --release exec "pkill redshift"
 # start redshift
 bindsym $mod+Shift+m --release exec "pkill redshift;redshift"
 
+# picom toggle
 bindsym $mod+t exec --no-startup-id pkill picom 
 bindsym $mod+Ctrl+t exec --no-startup-id picom --config ~/.config/picom.conf -b
+
+
 
 bindsym $mod+Shift+d --release exec --no-startup-id "killall dunst; exec notify-send 'restart dunst'" 
 bindsym Print exec --no-startup-id i3-scrot 
@@ -158,12 +167,15 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+# making the nagbar pop up
+# these lines are not really needed, but I have created nag bar so that I have a
+# visual clue about whats happening
 bindsym $mod+0 mode "$mode_system" \
 exec --no-startup-id \
 "i3-nagbar -t warning -m 'Click the keybind or press a button: (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown' \
--B 'Lock'        'pkill i3-nagbar;i3 mode default;i3exit lock;' \
+-B 'Lock'        'pkill i3-nagbar;i3 mode default;i3exit lock' \
 -B 'Log out'     'pkill i3-nagbar;i3 mode default;i3exit logout;' \
 -B 'Switch User' 'pkill i3-nagbar;i3 mode default;i3exit switch_user;' \
 -B 'Suspend'     'pkill i3-nagbar;i3 mode default;i3exit suspend;' \
@@ -172,10 +184,12 @@ exec --no-startup-id \
 -B 'Shutdown'    'pkill i3-nagbar;i3 mode default;i3exit shutdown;'\
 -B 'Do_nothing'  'i3 mode default;pkill i3-nagbar;'"
 
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+# Capturing the key and doing the action based on the key pressed
+# If the next lines are missing, one will have to click with the mouse on the nagbar buttons
+# set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l       exec --no-startup-id "pkill i3-nagbar;i3exit lock;"               mode "default"
-    bindsym s       exec --no-startup-id "pkill i3-nagbar;i3exit suspend;"            mode "default"
+    bindsym l       exec --no-startup-id "pkill i3-nagbar;i3exit lock"               mode "default"
+    bindsym s       exec --no-startup-id "pkill i3-nagbar;i3exit suspend"            mode "default"
     bindsym u       exec --no-startup-id "pkill i3-nagbar;i3exit switch_user;"        mode "default"
     bindsym e       exec --no-startup-id "pkill i3-nagbar;i3exit logout;"             mode "default"
     bindsym h       exec --no-startup-id "pkill i3-nagbar;i3exit hibernate;",         mode "default"
@@ -208,7 +222,7 @@ smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders on
+# smart_borders on
 
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.

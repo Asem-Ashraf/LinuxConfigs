@@ -104,7 +104,8 @@ vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 
 -- Compile the current buffer with lualatex
-vim.keymap.set("n", "<leader>clt", "<cmd>w<CR><cmd>!lualatex % > output.txt && convert -density 300 ./*.pdf %.jpg<CR><CR>",{silent=true})
+vim.keymap.set("n", "<leader>clt", "<cmd>w<CR><cmd>!lualatex % > output.txt;<CR><CR>",{silent=true})
+vim.keymap.set("n", "<leader>cllt", "<cmd>w<CR><cmd>!lualatex % > output.txt; magick -density 300 ./*.pdf %.jpg<CR><CR>",{silent=true})
 
 -- vim.keymap.set("n", "<leader><leader>", function()
 --

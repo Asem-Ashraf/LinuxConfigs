@@ -1,5 +1,12 @@
 vim.cmd [[packadd packer.nvim]]
-
+require('packer').init({
+	compile_path = vim.fn.stdpath('data') .. '/site/plugin/packer_compiled.lua',
+	display = {
+		open_fn = function()
+			return require('packer.util').float({ border = 'rounded' })
+		end,
+	},
+})
 
 return require('packer').startup(function(use)
 	-- Packer can manage itself
@@ -9,7 +16,7 @@ return require('packer').startup(function(use)
 	use {
 		"nvim-telescope/telescope.nvim",
 		-- or                            , branch = '0.1.x',
-		requires = { 
+		requires = {
 			'nvim-lua/plenary.nvim',
 			'duane9/nvim-rg',
 			'sharkdp/fd'
@@ -18,7 +25,6 @@ return require('packer').startup(function(use)
 
 	-- Color Schemes
 	use({ "cpea2506/one_monokai.nvim" })
-	use({ 'rose-pine/neovim', as = 'rose-pine' })
 	use { "catppuccin/nvim", as = "catppuccin" }
 
 	-- Treesitter
@@ -35,10 +41,14 @@ return require('packer').startup(function(use)
 	}
 
 	-- markdown preview
-	use {
-		'iamcco/markdown-preview.nvim',
-		run = function() vim.fn["mkdp#util#install"]() end
-	}
+	use({ 
+		"iamcco/markdown-preview.nvim",
+		run = function() vim.fn["mkdp#util#install"]() end,
+		setup = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" }, 
+	})
 
 	-- obsidian.md
 	use("epwalsh/obsidian.nvim")
@@ -51,34 +61,41 @@ return require('packer').startup(function(use)
 		branch = 'v2.x',
 		requires = {
 			-- LSP Support
-			{ 'neovim/nvim-lspconfig' },  -- Required
-			-- { 'williamboman/mason.nvim' }, -- Optional
-			-- { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+			{ 'neovim/nvim-lspconfig', opts = { ui = { windows = { default_options = { border = "rounded", }, }, }, }, }, -- Required
+			{ "folke/noice.nvim", opts = { presets = { lsp_doc_border = true, }, }, },
+			{ 'mfussenegger/nvim-lint' },
 
 			-- autocompletion
-			{ 'L3MON4D3/LuaSnip',                 run = 'make install_jsregexp' }, -- Required
-			{ 'hrsh7th/nvim-cmp' },                    -- Required
-			{ 'hrsh7th/cmp-nvim-lsp' },                -- Required
-			{ 'hrsh7th/cmp-buffer' },                  -- Optional
-			{ 'hrsh7th/cmp-path' },                    -- Optional
-			{ 'hrsh7th/cmp-nvim-lua' },                -- Optional
+			{ 'L3MON4D3/LuaSnip',        run = 'make install_jsregexp' }, -- Required
+			{ 'hrsh7th/nvim-cmp' },                                       -- Required
+			{ 'hrsh7th/cmp-nvim-lsp' },                                   -- Required
+			{ 'hrsh7th/cmp-buffer' },                                     -- Optional
+			{ 'hrsh7th/cmp-path' },                                       -- Optional
+			{ 'hrsh7th/cmp-nvim-lua' },                                   -- Optional
 
-			{ 'saadparwaiz1/cmp_luasnip' },            -- Optional
+			{ 'saadparwaiz1/cmp_luasnip' },                               -- Optional
 
 			{ 'folke/neodev.nvim' },
 			{ 'j-hui/fidget.nvim' },
 		}
 	}
 	-- nvim-tree
-	use {
-		'kyazdani42/nvim-tree.lua',
-		requires = {
-			'kyazdani42/nvim-web-devicons', -- optional, for file icons
-		},
-		tag = 'nightly'           -- optional, updated every week. (see issue #1193)
-	}
+	use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } }
 
 	use 'windwp/nvim-autopairs'
+
+	use { 'goerz/jupytext.nvim',
+		opts = {
+			jupytext = 'jupytext',
+			-- format = "ipynb",
+			update = true,
+			-- filetype = "ipynb",
+			-- new_template = require("jupytext").default_new_template(),
+			-- sync_patterns = { '*.ipynb','*.py', '*.jl', '*.R', '*.Rmd', '*.qmd' },
+			autosync = true,
+			-- handle_url_schemes = true,
+		}
+	}
 
 	use { "kylechui/nvim-surround" }
 
@@ -88,10 +105,7 @@ return require('packer').startup(function(use)
 	use 'lewis6991/gitsigns.nvim'
 
 
-	use {
-		'github/copilot.vim',
-		branch = 'main',
-	}
+	use { 'github/copilot.vim'}
 
 	use "akinsho/toggleterm.nvim"
 

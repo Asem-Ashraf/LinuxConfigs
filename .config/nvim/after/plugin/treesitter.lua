@@ -2,9 +2,12 @@ require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = { 'make', 'markdown_inline', 'c',  'cpp', 'lua', 'python', 'rust'},
 
-  highlight = { 
+  highlight = {
     enable = true,
     -- additional_vim_regex_highlighting = ,
+  },
+  fold = {
+    enable = true,
   },
   indent = { enable = true, disable = { 'python' } },
   incremental_selection = {

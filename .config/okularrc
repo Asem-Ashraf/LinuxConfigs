@@ -7,13 +7,12 @@
 2 screens: XPosition=0
 2 screens: YPosition=782
 HDMI-0 eDP-1-1=eDP-1-1
-State=AAAA/wAAAAD9AAAAAQAAAAAAAAJYAAADYPwCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAGQAZQBiAGEAcgAAAAAAAAADYAAAAPYA///+AAAC+gAAAwcAAAAEAAAABAAAAAgAAAAI/AAAAAMAAAABAAAAAQAAACwAcQB1AGkAYwBrAEEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgIAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAwAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 eDP-1=eDP-1
 eDP-1-1=eDP-1-1
 
 [Desktop Entry]
 FullScreen=false
-shouldShowMenuBarComingFromFullScreen=true
+shouldShowMenuBarComingFromFullScreen=false
 shouldShowToolBarComingFromFullScreen=true
 
 [General]
@@ -37,7 +36,7 @@ DP-0 DP-2 HDMI-0=HDMI-0
 DP-0 HDMI-0 eDP-1-1=eDP-1-1
 HDMI-0 eDP-1-1=eDP-1-1
 HDMI-1-0 eDP-1=eDP-1
-ToolBarsMovable=Disabled
+MenuBar=Disabled
 eDP-1=eDP-1
 eDP-1-1=eDP-1-1
 
@@ -45,26 +44,24 @@ eDP-1-1=eDP-1-1
 ToolButtonStyle=IconOnly
 
 [Recent Files]
-File1[$e]=$HOME/sec/Career/GP/control/FinalMpcEquations.pdf
-File10[$e]=/mnt/Sec/Career/Faculty/4/4.2/ANN/study.pdf
-File2[$e]=/mnt/Sec/Career/Faculty/4/4.2/Embedded Systems 2/question bank computer contrl 2.pdf
-File3[$e]=/mnt/Sec/Career/resume-cv/resume.pdf
-File4[$e]=/mnt/Sec/onepage.pdf2222
-File5[$e]=/mnt/Sec/تـــــرجــــمــــــــة_ (1).pdf
-File6[$e]=/mnt/Sec/تـــــرجــــمــــــــة_ (1).pdf1
-File7[$e]=/mnt/Sec/تـــــرجــــمــــــــة_ (1)1.pdf1
-File8[$e]=$HOME/sec/totas.pdf
-File9[$e]=$HOME/sec/تـــــرجــــمــــــــة_ (1)1.pdf1.pdf
-Name1[$e]=FinalMpcEquations.pdf
-Name10[$e]=study.pdf
-Name2[$e]=question bank computer contrl 2.pdf
-Name3[$e]=resume.pdf
-Name4[$e]=onepage.pdf2222
-Name5[$e]=تـــــرجــــمــــــــة_ (1).pdf
-Name6[$e]=تـــــرجــــمــــــــة_ (1).pdf1
-Name7[$e]=تـــــرجــــمــــــــة_ (1)1.pdf1
-Name8[$e]=totas.pdf
-Name9[$e]=تـــــرجــــمــــــــة_ (1)1.pdf1.pdf
+File1[$e]=/mnt/Sec/Career/2Master/CyberSecurityBTU/1SoSe25/cslab/2/csl_task_sheet_02.pdf
+File2[$e]=/mnt/Sec/Career/2Master/CyberSecurityBTU/1SoSe25/seminar/RANsacked: A Domain-Informed Approach for Fuzzing LTE and 5G RAN-Core Interfaces.pdf
+File3[$e]=/mnt/Sec/Career/2Master/CyberSecurityBTU/1SoSe25/seminar/struct.pdf
+File4[$e]=$HOME/Documents/Antrag_auf_Einstellung_studentische_Beschaeftigte_Shrafelden.pdf
+File5[$e]=/mnt/Sec/Career/languages/german/B1.1_BTU_Course/KB B11.pdf
+File6[$e]=/mnt/Sec/Career/2Master/CyberSecurityBTU/1SoSe25/Cryptography/978-3-319-30396-3.pdf
+File7[$e]=/mnt/Sec/Career/2Master/CyberSecurityBTU/1SoSe25/seminar/FEEDBACK_struct.pdf
+File8[$e]=/mnt/Sec/Career/2Master/CyberSecurityBTU/1SoSe25/seminar/seminar-itsec-tex/seminar-paper.pdf
+File9[$e]=/mnt/Sec/Career/2Master/CyberSecurityBTU/1SoSe25/seminar/paper/seminar-paper.pdf
+Name1[$e]=csl_task_sheet_02.pdf
+Name2[$e]=RANsacked: A Domain-Informed Approach for Fuzzing LTE and 5G RAN-Core Interfaces.pdf
+Name3[$e]=struct.pdf
+Name4[$e]=Antrag_auf_Einstellung_studentische_Beschaeftigte_Shrafelden.pdf
+Name5[$e]=KB B11.pdf
+Name6[$e]=978-3-319-30396-3.pdf
+Name7[$e]=FEEDBACK_struct.pdf
+Name8[$e]=seminar-paper.pdf
+Name9[$e]=seminar-paper.pdf
 
 [Shortcut Schemes]
 Current Scheme=Default
@@ -73,4 +70,4 @@ Current Scheme=Default
 ToolButtonStyle=IconOnly
 
 [UiSettings]
-ColorScheme=KvAdaptaDark
+ColorScheme=Breeze Light
